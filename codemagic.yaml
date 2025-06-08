@@ -3,7 +3,7 @@ workflows:
     name: iOS Build
     instance_type: mac_mini_m1
     environment:
-      node: 18
+      node: 22.2.0
       xcode: latest
       cocoapods: default
       vars:
