@@ -11,13 +11,13 @@ workflows:
 
     scripts:
       - npm install
-      - npm run build        # Generates `build/` for Capacitor sync
+      - npm run build                       # Generates `build/` directory for Capacitor
       - npx cap sync ios
       - |
           cd ios
           pod install
           cd ..
-      - xcode-project build -w ios/App.xcworkspace -s App -sdk iphoneos -configuration Release
+      - xcodebuild -workspace ios/App.xcworkspace -scheme App -sdk iphoneos -configuration Release
 
     artifacts:
       - ios/build/**/Build/Products/Release-iphoneos/*.ipa
