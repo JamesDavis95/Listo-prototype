@@ -1,7 +1,7 @@
 workflows:
   ios-build:
     name: iOS Build
-    instance_type: mac_mini
+    instance_type: mac_mini_m1
     environment:
       node: 18
       xcode: latest
