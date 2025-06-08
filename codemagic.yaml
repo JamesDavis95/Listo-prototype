@@ -10,6 +10,7 @@ workflows:
         APP_ID: "com.yourcompany.listo"
     scripts:
       - npm install
+      - npm run build        # ⬅️ This step generates the `build/` directory for Capacitor
       - npx cap sync ios
       - cd ios
       - pod install
