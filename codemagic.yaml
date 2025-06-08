@@ -10,14 +10,14 @@ workflows:
         APP_ID: "com.yourcompany.listo"
 
     scripts:
-  - npm install
-  - npm run build              # Generates `build/` for Capacitor sync
-  - npx cap sync ios
-  - |
-      cd ios
-      pod install
-      cd ..
-  - xcode-project build -w ios/App.xcworkspace -s App -sdk iphoneos -configuration Release
+      - npm install
+      - npm run build        # Generates `build/` for Capacitor sync
+      - npx cap sync ios
+      - |
+          cd ios
+          pod install
+          cd ..
+      - xcode-project build -w ios/App.xcworkspace -s App -sdk iphoneos -configuration Release
 
     artifacts:
       - ios/build/**/Build/Products/Release-iphoneos/*.ipa
